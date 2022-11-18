@@ -16,7 +16,7 @@ import static com.codeborne.selenide.Selenide.open;
 public class AuthTest {
 
     @Test
-    void shouldTransferMoneyFromCard1() {
+    void positiveTest() {
         open("http://localhost:7777");
         var loginPage = new LoginPage();
         var authInfo = DataHelper.getAuthInfo();

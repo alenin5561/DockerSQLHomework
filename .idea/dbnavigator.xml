@@ -35,8 +35,8 @@
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files>
-      <object connection-id="f380900f-566c-4b51-b39d-a2acd7e32585" object-ref="schemas/database/tables/users" />
       <object connection-id="f380900f-566c-4b51-b39d-a2acd7e32585" object-ref="schemas/database/tables/auth_codes" />
+      <object connection-id="f380900f-566c-4b51-b39d-a2acd7e32585" object-ref="schemas/database/tables/users" />
     </open-files>
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
