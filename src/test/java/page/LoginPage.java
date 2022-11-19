@@ -1,7 +1,9 @@
 package page;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import data.DataHelper;
+import org.openqa.selenium.Keys;
 
 import static com.codeborne.selenide.Selenide.$;
 
@@ -15,6 +17,24 @@ public class LoginPage {
         passwordField.setValue(info.getPassword());
         loginButton.click();
         return new VerificationPage();
+    }
+
+    public void  clearPage() {
+        loginField.doubleClick();
+        loginField.sendKeys(Keys.DELETE);
+        passwordField.doubleClick();
+        passwordField.sendKeys(Keys.DELETE);
+    }
+
+    public LoginPage threeTimesInvalidPassword(DataHelper.AuthInfo info) {
+        for (int times = 0; times <3 ; times++) {
+            loginField.setValue(info.getLogin());
+            passwordField.setValue(info.getPassword());
+            loginButton.click();
+            clearPage();
+        }
+        loginButton.shouldBe(Condition.disabled);
+        return new LoginPage();
     }
 }
 

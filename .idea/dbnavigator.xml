@@ -34,10 +34,7 @@
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="f380900f-566c-4b51-b39d-a2acd7e32585" object-ref="schemas/database/tables/auth_codes" />
-      <object connection-id="f380900f-566c-4b51-b39d-a2acd7e32585" object-ref="schemas/database/tables/users" />
-    </open-files>
+    <open-files />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-actions connection-id="f380900f-566c-4b51-b39d-a2acd7e32585" dataset="database.card_transactions" active-filter-id="" />
