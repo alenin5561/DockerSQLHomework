@@ -60,22 +60,43 @@ public class DataHelper {
         }
     }
 
+    @SneakyThrows
+    public static String getUserId1() {
+        var runner = new QueryRunner();
+        var idSQL = "SELECT id from users where login= 'vasya';";
+        try (
+                var conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/database", "user", "pass");
+        ) {
+            return runner.query(conn, idSQL, new ScalarHandler<>());
+        }
+    }
+    @SneakyThrows
+    public static String getUserId2() {
+        var runner = new QueryRunner();
+        var idSQL = "SELECT id from users where login= 'petya';";
+        try (
+                var conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/database", "user", "pass");
+        ) {
+            return runner.query(conn, idSQL, new ScalarHandler<>());
+        }
+    }
+
 
     //реализовать метод!
     public static void clearSUT() throws SQLException {
         var runner = new QueryRunner();
-        var deleteCodesTableSQL = "DELETE FROM auth_codes ";
-        var deleteCardsInfoTableSQL = "DELETE FROM cards ";
-        var deleteUsersInfoTableSQL1 = "DELETE FROM users ";
-        var deleteUsersInfoTableSQL2 = "DELETE FROM users ";
+        var deleteCodesTableSQL = "DELETE FROM auth_codes WHERE user_id=?;";
+        var deleteCardsInfoTableSQL = "DELETE FROM cards WHERE user_id=?;";
+        var deleteUsersInfoTableSQL1 = "DELETE FROM users WHERE id=?;";
+        var deleteUsersInfoTableSQL2 = "DELETE FROM users WHERE id=?;";
 
         try (
                 var conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/database", "user", "pass");
         ) {
-            var deleteCodes = runner.update(conn, deleteCodesTableSQL, new BeanListHandler <>(User.class));
-            var deleteCardsInfo = runner.update(conn, deleteCardsInfoTableSQL, new BeanListHandler <>(User.class));
-            var deleteUsers1 = runner.update(conn, deleteUsersInfoTableSQL1, new BeanListHandler <>(User.class));
-            var deleteUsers2 = runner.update(conn, deleteUsersInfoTableSQL2, new BeanListHandler <>(User.class));
+            var deleteCodes = runner.update(conn, deleteCodesTableSQL, getUserId1());
+            var deleteCardsInfo = runner.update(conn, deleteCardsInfoTableSQL, getUserId1());
+            var deleteUsers1 = runner.update(conn, deleteUsersInfoTableSQL1,getUserId1());
+            var deleteUsers2 = runner.update(conn, deleteUsersInfoTableSQL2,getUserId2());
         }
     }
 }
