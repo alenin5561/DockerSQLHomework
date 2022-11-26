@@ -19,7 +19,7 @@ public class LoginPage {
         return new VerificationPage();
     }
 
-    public void  clearPage() {
+    public void clearPage() {
         loginField.doubleClick();
         loginField.sendKeys(Keys.DELETE);
         passwordField.doubleClick();
@@ -27,13 +27,12 @@ public class LoginPage {
     }
 
     public LoginPage threeTimesInvalidPassword(DataHelper.AuthInfo info) {
-        for (int times = 0; times <3 ; times++) {
+        for (int times = 0; times < 3; times++) {
             loginField.setValue(info.getLogin());
             passwordField.setValue(info.getPassword());
             loginButton.click();
             clearPage();
         }
-        loginButton.shouldBe(Condition.disabled);
         return new LoginPage();
     }
 }

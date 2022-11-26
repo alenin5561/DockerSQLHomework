@@ -30,16 +30,19 @@ public class AuthTest {
         var dashboardPage = verificationPage.validVerify((verificationCode));
     }
 
-     @Test
+    @Test
     void invalidPasswordThreeTimes() {
         open("http://localhost:7777");
         var loginPage = new LoginPage();
         var authInfo = DataHelper.getInvalidInfo();
         var verificationPage = loginPage.threeTimesInvalidPassword(authInfo);
+        var actual = DataHelper.getUserStatus();
+        var expected = "blocked";
+        Assertions.assertEquals(expected, actual);
     }
 
-   @AfterAll
+    @AfterAll
     public static void tearDown() throws SQLException {
-       clearSUT();
+        clearSUT();
     }
 }
