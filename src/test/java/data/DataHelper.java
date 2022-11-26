@@ -64,18 +64,18 @@ public class DataHelper {
     //реализовать метод!
     public static void clearSUT() throws SQLException {
         var runner = new QueryRunner();
-        var deleteCodesTableSQL = "DELETE FROM auth_codes WHERE user_id=?;";
-        var deleteCardsInfoTableSQL = "DELETE FROM cards WHERE user_id=?;";
-        var deleteUsersInfoTableSQL1 = "DELETE FROM users WHERE id=?;";
-        var deleteUsersInfoTableSQL2 = "DELETE FROM users WHERE id=?;";
+        var deleteCodesTableSQL = "DELETE FROM auth_codes ";
+        var deleteCardsInfoTableSQL = "DELETE FROM cards ";
+        var deleteUsersInfoTableSQL1 = "DELETE FROM users ";
+        var deleteUsersInfoTableSQL2 = "DELETE FROM users ";
 
         try (
                 var conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/database", "user", "pass");
         ) {
-            var deleteCodes = runner.update(conn, deleteCodesTableSQL, "966490ae-1d96-44b2-ae22-c33fb4344c2b");
-            var deleteCardsInfo = runner.update(conn, deleteCardsInfoTableSQL, "966490ae-1d96-44b2-ae22-c33fb4344c2b");
-            var deleteUsers1 = runner.update(conn, deleteUsersInfoTableSQL1, "966490ae-1d96-44b2-ae22-c33fb4344c2b");
-            var deleteUsers2 = runner.update(conn, deleteUsersInfoTableSQL2, "b3115e67-6ef9-4258-beac-52d82014f7db");
+            var deleteCodes = runner.update(conn, deleteCodesTableSQL, new BeanListHandler <>(User.class));
+            var deleteCardsInfo = runner.update(conn, deleteCardsInfoTableSQL, new BeanListHandler <>(User.class));
+            var deleteUsers1 = runner.update(conn, deleteUsersInfoTableSQL1, new BeanListHandler <>(User.class));
+            var deleteUsers2 = runner.update(conn, deleteUsersInfoTableSQL2, new BeanListHandler <>(User.class));
         }
     }
 }
