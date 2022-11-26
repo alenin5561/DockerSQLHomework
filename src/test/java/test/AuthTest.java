@@ -1,10 +1,12 @@
 package test;
 
+import com.codeborne.selenide.Condition;
 import com.github.javafaker.Faker;
 import data.DataHelper;
 import lombok.SneakyThrows;
 import org.apache.commons.dbutils.QueryRunner;
 import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import page.LoginPage;
@@ -13,6 +15,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 import static com.codeborne.selenide.Selenide.open;
+import static data.DataHelper.clearSUT;
 
 
 public class AuthTest {
@@ -35,10 +38,8 @@ public class AuthTest {
         var verificationPage = loginPage.threeTimesInvalidPassword(authInfo);
     }
 
-   /* @AfterAll
+   @AfterAll
     public static void tearDown() throws SQLException {
        clearSUT();
     }
-
-    */
 }

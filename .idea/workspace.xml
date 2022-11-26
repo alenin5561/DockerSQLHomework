@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b83177c-fcd1-42d2-a144-ced95b9e20d2" name="Changes" comment="test success finaly">
-      <change afterPath="$PROJECT_DIR$/src/test/java/data/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+    <list default="true" id="2b83177c-fcd1-42d2-a144-ced95b9e20d2" name="Changes" comment="corrections">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/data/DataHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/data/DataHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/data/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/data/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/page/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/page/LoginPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/test/AuthTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/AuthTest.java" afterDir="false" />
     </list>
@@ -60,7 +58,7 @@
       <recent name="C:\Netology Homeworks\DockerSQLHomework" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.AuthTest.invalidPasswordThreeTimes">
+  <component name="RunManager" selected="Gradle.AuthTest">
     <configuration name="AuthTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -178,9 +176,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.AuthTest" />
         <item itemvalue="Gradle.AuthTest.invalidPasswordThreeTimes" />
         <item itemvalue="Gradle.AuthTest.positiveTest" />
-        <item itemvalue="Gradle.AuthTest" />
         <item itemvalue="Gradle.AuthTest.shouldTransferMoneyFromCard1" />
         <item itemvalue="Gradle.AuthTest.test" />
       </list>
@@ -216,7 +214,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668795560267</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="corrections">
+      <created>1668877919981</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1668877919981</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -234,6 +239,7 @@
     <MESSAGE value="commit" />
     <MESSAGE value="test success" />
     <MESSAGE value="test success finaly" />
-    <option name="LAST_COMMIT_MESSAGE" value="test success finaly" />
+    <MESSAGE value="corrections" />
+    <option name="LAST_COMMIT_MESSAGE" value="corrections" />
   </component>
 </project>
