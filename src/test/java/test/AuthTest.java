@@ -36,13 +36,14 @@ public class AuthTest {
         var loginPage = new LoginPage();
         var authInfo = DataHelper.getInvalidInfo();
         var verificationPage = loginPage.threeTimesInvalidPassword(authInfo);
-        var actual = DataHelper.getUserStatus();
+        var actual = DataHelper.getUserStatus("vasya");
         var expected = "blocked";
         Assertions.assertEquals(expected, actual);
     }
 
+    @SneakyThrows
     @AfterAll
-    public static void tearDown() throws SQLException {
+    public static void tearDown(){
         clearSUT();
     }
 }

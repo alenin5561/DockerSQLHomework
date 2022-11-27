@@ -50,34 +50,24 @@ public class DataHelper {
     }
 
     @SneakyThrows
-    public static String getUserStatus() {
+    public static String getUserStatus(String login) {
         var runner = new QueryRunner();
-        var statusSQL = "SELECT status from users where login= 'vasya';";
+        var statusSQL = "SELECT status from users where login= ?;";
         try (
                 var conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/database", "user", "pass");
         ) {
-            return runner.query(conn, statusSQL, new ScalarHandler<>());
+            return runner.query(conn, statusSQL, login, new ScalarHandler<>());
         }
     }
 
     @SneakyThrows
-    public static String getUserId1() {
+    public static String getUserId1(String login) {
         var runner = new QueryRunner();
-        var idSQL = "SELECT id from users where login= 'vasya';";
+        var idSQL = "SELECT id from users where login=?;";
         try (
                 var conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/database", "user", "pass");
         ) {
-            return runner.query(conn, idSQL, new ScalarHandler<>());
-        }
-    }
-    @SneakyThrows
-    public static String getUserId2() {
-        var runner = new QueryRunner();
-        var idSQL = "SELECT id from users where login= 'petya';";
-        try (
-                var conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/database", "user", "pass");
-        ) {
-            return runner.query(conn, idSQL, new ScalarHandler<>());
+            return runner.query(conn, idSQL, login, new ScalarHandler<>());
         }
     }
 
@@ -93,10 +83,10 @@ public class DataHelper {
         try (
                 var conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/database", "user", "pass");
         ) {
-            var deleteCodes = runner.update(conn, deleteCodesTableSQL, getUserId1());
-            var deleteCardsInfo = runner.update(conn, deleteCardsInfoTableSQL, getUserId1());
-            var deleteUsers1 = runner.update(conn, deleteUsersInfoTableSQL1,getUserId1());
-            var deleteUsers2 = runner.update(conn, deleteUsersInfoTableSQL2,getUserId2());
+            var deleteCodes = runner.update(conn, deleteCodesTableSQL, getUserId1("vasya"));
+            var deleteCardsInfo = runner.update(conn, deleteCardsInfoTableSQL, getUserId1("vasya"));
+            var deleteUsers1 = runner.update(conn, deleteUsersInfoTableSQL1,getUserId1("vasya"));
+            var deleteUsers2 = runner.update(conn, deleteUsersInfoTableSQL2,getUserId1("petya"));
         }
     }
 }
