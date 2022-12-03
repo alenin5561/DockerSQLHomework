@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="test.AuthTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-12-03T07:32:55" hostname="VIVOBOOK" time="6.376">
+<testsuite name="test.AuthTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-12-03T07:50:27" hostname="VIVOBOOK" time="6.622">
   <properties/>
-  <testcase name="positiveTest()" classname="test.AuthTest" time="4.087"/>
-  <testcase name="invalidPasswordThreeTimes()" classname="test.AuthTest" time="2.289"/>
+  <testcase name="positiveTest()" classname="test.AuthTest" time="4.315"/>
+  <testcase name="invalidPasswordThreeTimes()" classname="test.AuthTest" time="2.307"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-Starting ChromeDriver 107.0.5304.62 (1eec40d3a5764881c92085aaee66d25075c159aa-refs/branch-heads/5304@{#942}) on port 43936
+Starting ChromeDriver 107.0.5304.62 (1eec40d3a5764881c92085aaee66d25075c159aa-refs/branch-heads/5304@{#942}) on port 19515
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-дек. 03, 2022 10:32:57 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+[1670053829.477][WARNING]: This version of ChromeDriver has not been tested with Chrome version 108.
+дек. 03, 2022 10:50:29 AM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: W3C
 ]]></system-err>
 </testsuite>
