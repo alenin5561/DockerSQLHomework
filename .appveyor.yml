@@ -11,7 +11,7 @@ build: off  # будем использовать свой скрипт сбор
 install:
   # запускаем SUT (& означает, что в фоновом режиме - не блокируем терминал для запуска тестов)
   # то что в artifacts
-  - docker run -it --name infinite -d 29241a4302dc
+  - docker run -it --name 29241a4302dc
   - java -jar ./artifacts/app-deadline.jar -P:jdbc.url=jdbc:mysql://localhost:3306/database -P:jdbc.user=user -P:jdbc.password=pass -port=7777 &
 
 
