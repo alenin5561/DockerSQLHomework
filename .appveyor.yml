@@ -11,7 +11,7 @@ build: off  # будем использовать свой скрипт сбор
 install:
   # запускаем SUT (& означает, что в фоновом режиме - не блокируем терминал для запуска тестов)
   # то что в artifacts
-  - docker container start 29241a4302dc7f09cd1ba0b2a791594429643a3f50f096b366054656a230970b
+  - docker container run --name 29241a4302dc   mysql:8.0.18
   - java -jar ./artifacts/app-deadline.jar -P:jdbc.url=jdbc:mysql://localhost:3306/database -P:jdbc.user=user -P:jdbc.password=pass -port=7777 &
 
 
