@@ -37,7 +37,7 @@ public class AuthTest {
         var authInfo = DataHelper.getInvalidInfo();
         var verificationPage = loginPage.threeTimesInvalidPassword(authInfo);
         var actual = DataHelper.getUserStatus("vasya");
-        var expected = "";
+        var expected = "active";
         Assertions.assertEquals(expected, actual);
     }
 
