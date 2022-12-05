@@ -41,7 +41,6 @@ public class AuthTest {
         Assertions.assertEquals(expected, actual);
     }
 
-    @SneakyThrows
     @AfterAll
     public static void tearDown(){
         clearSUT();

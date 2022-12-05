@@ -72,8 +72,8 @@ public class DataHelper {
     }
 
 
-    //реализовать метод!
-    public static void clearSUT() throws SQLException {
+    @SneakyThrows
+    public static void clearSUT() {
         var runner = new QueryRunner();
         var deleteCodesTableSQL = "DELETE FROM auth_codes WHERE user_id=?;";
         var deleteCardsInfoTableSQL = "DELETE FROM cards WHERE user_id=?;";
@@ -87,6 +87,22 @@ public class DataHelper {
             var deleteCardsInfo = runner.update(conn, deleteCardsInfoTableSQL, getUserId1("vasya"));
             var deleteUsers1 = runner.update(conn, deleteUsersInfoTableSQL1,getUserId1("vasya"));
             var deleteUsers2 = runner.update(conn, deleteUsersInfoTableSQL2,getUserId1("petya"));
+        }
+    }
+
+    @SneakyThrows
+    public static void clearSUT1() {
+        var runner = new QueryRunner();
+        var deleteCodesTableSQL = "DELETE FROM auth_codes ;";
+        var deleteCardsInfoTableSQL = "DELETE FROM cards ;";
+        var deleteUsersInfoTableSQL1 = "DELETE FROM users ;";
+
+        try (
+                var conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/database", "user", "pass");
+        ) {
+            var deleteCodes = runner.update(conn, deleteCodesTableSQL, getUserId1("vasya"));
+            var deleteCardsInfo = runner.update(conn, deleteCardsInfoTableSQL, getUserId1("vasya"));
+            var deleteUsers1 = runner.update(conn, deleteUsersInfoTableSQL1,getUserId1("vasya"));
         }
     }
 }
