@@ -100,9 +100,9 @@ public class DataHelper {
         try (
                 var conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/database", "user", "pass");
         ) {
-            var deleteCodes = runner.update(conn, deleteCodesTableSQL, getUserId1("vasya"));
-            var deleteCardsInfo = runner.update(conn, deleteCardsInfoTableSQL, getUserId1("vasya"));
-            var deleteUsers1 = runner.update(conn, deleteUsersInfoTableSQL1,getUserId1("vasya"));
+            var deleteCodes = runner.update(conn, deleteCodesTableSQL);
+            var deleteCardsInfo = runner.update(conn, deleteCardsInfoTableSQL);
+            var deleteUsers1 = runner.update(conn, deleteUsersInfoTableSQL1);
         }
     }
 }
