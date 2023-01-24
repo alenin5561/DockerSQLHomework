@@ -37,4 +37,6 @@ public class AuthTest {
     public static void tearDown(){
         clearSUT1();
     }
+
+    //для запуска SUT java -jar ./artifacts/app-deadline.jar -P:jdbc.url=jdbc:mysql://localhost:3306/database -P:jdbc.user=user -P:jdbc.password=pass
 }

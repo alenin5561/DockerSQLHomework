@@ -23,6 +23,7 @@ CREATE TABLE auth_codes
     id      CHAR(36) PRIMARY KEY,
     user_id CHAR(36)   NOT NULL,
     code    VARCHAR(6) NOT NULL,
+
     created TIMESTAMP  NOT NULL DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users (id)
 );

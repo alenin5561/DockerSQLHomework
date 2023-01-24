@@ -33,6 +33,9 @@
       <console name="Connection 1" type="STANDARD" schema="database" session="Main"><![CDATA[select code * from auth_codes]]></console>
     </connection>
   </component>
+  <component name="DBNavigator.Project.DatabaseEditorStateManager">
+    <last-used-providers />
+  </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files />
   </component>
